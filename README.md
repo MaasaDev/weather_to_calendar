@@ -1,0 +1,2 @@
+# weather_to_calendar
+Googleの拡張機能を使ってMacのデフォルトカレンダーに天気を追加する
