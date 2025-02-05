@@ -19,14 +19,14 @@ Googleの拡張機能を使ってMacのデフォルトカレンダーに天気�
 ```bash
 git clone https://github.com/maasamatumoto/weather_to_calendar.git
 cd weather_to_calendar
-```bash
+```
 
 ### 2️. Swift（Vapor）サーバーのセットアップ
 ```bash
 swift package update
 swift build
 swift run SwiftWebSocketExec
-```bash
+```
 
 ## ローカルサーバーが起動！ → http://127.0.0.1:8080/ にアクセス
 
@@ -67,7 +67,6 @@ swift run SwiftWebSocketExec serve
 ```bash
 ifconfig | grep "inet "  # macOS
 ipconfig getifaddr en0   # macOS（Wi-Fi使用時）
-```bash
 → 例えば 192.168.1.19 のようなIPが出てきたら、それをスマホで使う。
 
 ### スマホのブラウザでアクセス
