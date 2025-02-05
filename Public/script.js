@@ -4,7 +4,7 @@
             logElement.scrollTop = logElement.scrollHeight;
         }
 
-        const socket = new WebSocket("ws://localhost:8080/weather");
+        const socket = new WebSocket("ws://192.168.1.19:8080/weather");
 
 socket.onopen = () => {
     document.getElementById("wsStatus").textContent = "🟢 接続済み";
@@ -37,4 +37,20 @@ socket.onclose = () => {
             const weatherData = sessionStorage.getItem("weatherData") || "☀️ 今日の天気は晴れ";
             logMessage("📡 WebSocket で天気情報を送信: " + weatherData);
             socket.send(JSON.stringify({ weather: weatherData }));
+        });
+        document.getElementById("triggerShortcut").addEventListener("click", () => {
+            // 取得済みの天気データ
+            const weatherData = sessionStorage.getItem("weatherData") || "☀️ 今日の天気は晴れ";
+        
+            // URLエンコード（ショートカットに渡すため）
+            const encodedWeather = encodeURIComponent(weatherData);
+        
+            // iOS ショートカットを起動するURLスキーム
+            const shortcutURL = `shortcuts://run-shortcut?name=カレンダーに天気予報を追加&input=${encodedWeather}`;
+        
+            // URLをデバッグ用に出力
+            console.log("🔗 ショートカットのURL:", shortcutURL);
+        
+            // ショートカットを起動
+            window.location.href = shortcutURL;
         });

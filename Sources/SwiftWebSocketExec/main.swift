@@ -4,6 +4,9 @@ import Vapor
 
 let app = Application()
 
+app.http.server.configuration.hostname = "0.0.0.0"
+app.http.server.configuration.port = 8080 
+
 app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 app.get { req in
     req.fileio.streamFile(at: app.directory.publicDirectory + "index.html")
@@ -54,6 +57,12 @@ func addEventToCalendar(eventTitle: String) {
         } else {
             print("❌ カレンダーアクセスが拒否されました")
         }
+    }
+}
+
+func routes(_ app: Application) throws {
+    app.get { req in
+        return "Hello, Vapor!"
     }
 }
 
