@@ -55,5 +55,40 @@ swift run SwiftWebSocketExec
 
 ---
 
+## スマホからでも動きます（現在はローカルのみ）
+### サーバーを起動
+```bash
+swift run SwiftWebSocketExec serve
+→ http://0.0.0.0:8080 でサーバーが起動していることを確認。
+
+### PCのローカルIPを確認
+```bash
+ifconfig | grep "inet "  # macOS
+ipconfig getifaddr en0   # macOS（Wi-Fi使用時）
+→ 例えば 192.168.1.19 のようなIPが出てきたら、それをスマホで使う。
+
+### スマホのブラウザでアクセス
+http://ここはPCのローカルIP:8080
+
+### WebSocketの接続が「🟢 接続済み」になることを確認
+
+## PWAとしてホーム画面に追加する場合
+	•	iPhone: Safariの「共有」ボタン → 「ホーム画面に追加」
+	•	Android: Chromeの「⋮メニュー」→「アプリをインストール」
+
+
+---
+
+## トラブルシューティング
+## サーバーが起動しない
+→swift run の前に swift package clean && swift build
+
+## スマホからアクセスできない
+→IPを再確認 ifconfig / ファイアウォールをチェック sudo pfctl -d
+
+## WebSocketが切断される
+→ネットワークが安定しているか確認（Wi-Fi切り替えなど）
+
+
 ## ライセンス
 This project is licensed under the MIT License - see the LICENSE file for details.
