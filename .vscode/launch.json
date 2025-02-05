@@ -1,0 +1,58 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:TestSwiftProject}",
+            "name": "Debug TestSwiftProject",
+            "program": "${workspaceFolder:TestSwiftProject}/.build/debug/TestSwiftProject",
+            "preLaunchTask": "swift: Build Debug TestSwiftProject"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:TestSwiftProject}",
+            "name": "Release TestSwiftProject",
+            "program": "${workspaceFolder:TestSwiftProject}/.build/release/TestSwiftProject",
+            "preLaunchTask": "swift: Build Release TestSwiftProject"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:TestSwiftProject}",
+            "name": "Debug SwiftHTTPServerExec",
+            "program": "${workspaceFolder:TestSwiftProject}/.build/debug/SwiftHTTPServerExec",
+            "preLaunchTask": "swift: Build Debug SwiftHTTPServerExec"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:TestSwiftProject}",
+            "name": "Release SwiftHTTPServerExec",
+            "program": "${workspaceFolder:TestSwiftProject}/.build/release/SwiftHTTPServerExec",
+            "preLaunchTask": "swift: Build Release SwiftHTTPServerExec"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:TestSwiftProject}",
+            "name": "Debug SwiftWebSocketExec",
+            "program": "${workspaceFolder:TestSwiftProject}/.build/debug/SwiftWebSocketExec",
+            "preLaunchTask": "swift: Build Debug SwiftWebSocketExec"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:TestSwiftProject}",
+            "name": "Release SwiftWebSocketExec",
+            "program": "${workspaceFolder:TestSwiftProject}/.build/release/SwiftWebSocketExec",
+            "preLaunchTask": "swift: Build Release SwiftWebSocketExec"
+        }
+    ]
+}
