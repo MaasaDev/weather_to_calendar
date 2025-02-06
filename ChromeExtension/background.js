@@ -22,7 +22,10 @@ socket.onclose = () => {
 async function fetchWeather() {
     console.log("🌍 `fetchWeather()` を実行");
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=3594d9eb9b4ef2e14d3fc3adcdd54a38&units=metric&lang=ja`;
+    require('dotenv').config();
+
+    const apikey = process.env.OPENWEATHER_API_KEY;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=${apiKey}&units=metric&lang=ja`;
 
     try {
         console.log("📡 `fetch()` を実行する直前");
